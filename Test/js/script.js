@@ -87,3 +87,37 @@ const calc = (a, b) => a - b;             // функция стрелка
 console.log(calc(18, 118));
 
 // Методы строк и чисел ---------------------------------------------------
+
+// https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String
+
+// console.dir(Number); можно потестить в браузере
+
+const testStr = 'test';
+const testStr2 = 'MERCY';
+
+const newTestStr = testStr.toUpperCase(); // Верхний регистр
+console.log(newTestStr);
+
+const newTestStr2 = testStr2.toLowerCase(); // Нижний регистр
+console.log(newTestStr2);
+
+const fruit = "Some fruit";
+console.log(fruit.indexOf('fruit')); // Поиск подстроки
+
+let testMessage = 'No Mercy';
+console.log(testMessage.slice(3)); // вырезаем часть строки с 3 позиции и до конца
+console.log(testMessage.slice(3, 4)); // вырезаем часть строки с 3 позиции и до 4
+console.log(testMessage.slice(-5)); // вырезаем часть строки c конца
+
+console.log(testMessage.substring(3)); // тоже самое но не поддерживает отрицательных значений
+
+// Numbers ---------------------------------------------------
+
+let testNum = 12.9;
+
+console.log(Math.round(testNum)); // Округляем число до целого по правилам математики
+console.log(Math.floor(testNum)); // Округляем число до целого отбрасывая дробную часть
+
+let testNumInStr = "12.2px";
+console.log(parseInt(testNumInStr)); // Выводит целое число из строки 
+console.log(parseFloat(testNumInStr)); // Выводит дробь из строки
