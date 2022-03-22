@@ -222,4 +222,92 @@ function compareNum(a, b) {   // функция сортировки чисел
   return a - b;
 }
 
+console.log(testArr);
 console.log(sortTestArr);
+
+
+// Передача по ссылке или по значению, Spread оператор (ES6-ES9) -----------------------
+
+const spObj = {
+  a: 5,
+  b: 1,
+};
+
+const copySpObj = spObj; // ссылка
+
+copySpObj.a = 10;
+
+console.log(spObj);
+console.log(copySpObj);
+
+const newObj1 = {
+  a : 5,
+  b : 10,
+  str : 'hello',
+  colors : {
+    dark : 'black',
+    light: 'white',
+  }
+};
+
+function objCopy(mainObj) {
+  let objCopy = {};
+
+  for (let key in mainObj) {
+    if (typeof(key) === 'object') {
+      for (let i in mainObj[key]) {
+        objCopy[key][i] = mainObj[key][i];
+      }
+    }
+    objCopy[key] = mainObj[key];
+  }
+  return objCopy;
+}
+
+const newObj2 = objCopy(newObj1);
+newObj2.colors.dark = 'blue';
+
+console.log(newObj1);             // не поменялся первый объект
+console.log(newObj2);             // копия через цикл
+
+const add = {
+  d : 17,
+  e : 20
+};
+
+// console.log(Object.assign(newObj2, add)); // копия повехностных значений объекта, глуб не меняется
+
+const cloneObj = Object.assign({}, add);  // новый объект + копия
+cloneObj.d = 33;
+
+console.log(add);
+console.log(cloneObj);
+
+const oldArray = ['a', 'b', 'c'];
+const newArray = oldArray.slice(); // копирует массив
+
+const video = ['youtube', 'vimeo', 'rutube', [1, 2]];
+const blogs = ['wordpress', 'livejornal', 'blogger'];
+const internet = [...video, ...blogs, 'vk', 'facebook'];
+
+internet.shift();
+
+console.log(video);
+console.log(internet);
+
+function log(aa, b, c) {
+  console.log(aa);
+  console.log(b);
+  console.log(c);
+}
+
+const numForLog = [2, 5, 7];
+
+log(...numForLog);
+
+const ObjectSP = {
+  one: 1,
+  two: 2,
+};
+
+const newObjectSP = {...ObjectSP};
