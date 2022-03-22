@@ -181,3 +181,45 @@ for (let key in testOptions) {
     console.log(`Свойство ${key} имеет значение ${testOptions[key]}`);
   }
 }
+
+// Массивы и псевдомассивы ---------------------------------------------
+
+const testArray = [1, 2, 3, 6, 8];
+
+testArray.pop(); // удаляет элемент в конце массива
+testArray.push(10); // добавляет элемент в конец массива
+
+for (let i = 0; i < testArray.length; i += 1) {
+  console.log(testArray[i]);
+}
+
+for (let value of testArray) {
+  console.log(value);
+}
+
+const testArray2 = [1, 2, 3, 6, 8, 10];
+
+testArray2.forEach(function(item, i, arr) {
+  console.log(`${i}: ${item} in array ${arr}`);
+});
+
+// testArr.shift();           // удаляет первый элемент
+// testArr.unshift();         // добавляет элемент в начало массива
+// testArr.split(',');        // превращает строку в массив
+// testArr.join(' ');         // превращает массив в строку
+// delete testArr[1];         // удаляет второй элемент
+// testArr.splice(0, 5, 4);   // удалить 5 элементов с индекса ноль и добавить число 4
+// testArr.slice(0, 5);       // копирует часть массива с индекса 0 до 5 не включая
+// testArr.sort();            // сорт массива, если не передать fn - сорт элементы как строки
+// testArr.reverse();         // меняет порядок элементов на обратный
+// testArr.concat(3);         // создает нью массив в который все копирует и добав нью элемент
+
+let testArr = [14, 32, 65, 97, 0, 23, 44, 82];
+
+let sortTestArr = testArr.sort(compareNum); // отсортировали и засунули в нью массив
+
+function compareNum(a, b) {   // функция сортировки чисел
+  return a - b;
+}
+
+console.log(sortTestArr);
