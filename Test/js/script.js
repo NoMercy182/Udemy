@@ -305,9 +305,20 @@ const numForLog = [2, 5, 7];
 
 log(...numForLog);
 
-const ObjectSP = {
+const objectSP = {
   one: 1,
   two: 2,
+  num: {
+    four: 4,
+    five: 5,
+  }
 };
 
-const newObjectSP = {...ObjectSP};
+const newObjectSP = {...objectSP}; // копирует по значению только верхний уровень
+                                   // глубина остается по ссылке
+newObjectSP.num.four = 'четыре';
+
+console.log(objectSP);
+console.log(newObjectSP);
+
+// Основы ООП ебать ------------------------------------------------------
