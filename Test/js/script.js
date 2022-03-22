@@ -31,6 +31,7 @@
 
 // let result = (num === 50) ? true : false;
 // console.log(result);
+
 // result = (num === 50);
 // console.log(result);
 
@@ -66,3 +67,23 @@
 // for (let i = 1; i < 8; i += 1) {
 //   console.log(i);
 // }
+
+// Functions -------------------------------------------------------------
+
+function doCalc(a, b) {                   // function decloration
+  return (a + b);
+}
+
+const resultDoCalc = doCalc(20, 30); // результат функции поместил в переменную
+console.log(resultDoCalc);
+
+
+const funcExpression = function(text) {   // function expression
+  console.log(text);
+};
+funcExpression('Hello Babe!');
+
+const calc = (a, b) => a - b;             // функция стрелка
+console.log(calc(18, 118));
+
+// Методы строк и чисел ---------------------------------------------------
