@@ -121,3 +121,29 @@ console.log(Math.floor(testNum)); // Округляем число до цело
 let testNumInStr = "12.2px";
 console.log(parseInt(testNumInStr)); // Выводит целое число из строки 
 console.log(parseFloat(testNumInStr)); // Выводит дробь из строки
+
+// Callback functions ---------------------------------------------------
+
+function first() {
+  setTimeout(function() {
+    console.log(1);
+  }, 500);
+}
+
+function second() {
+  console.log(2);
+}
+
+first();
+second();
+
+function learnJS(lang, callback) {
+  console.log(`I learn: ${lang}`);
+  callback();
+}
+
+function done() {
+  console.log('I Finished this lesson!');
+}
+
+learnJS('JavaScript', done); // передаем функцию как аргумент без скобок!
