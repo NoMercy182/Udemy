@@ -147,3 +147,37 @@ function done() {
 }
 
 learnJS('JavaScript', done); // передаем функцию как аргумент без скобок!
+
+// Объекты, деструктуризация объектов ---------------------------------------------
+
+// Методы объектов
+// https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+const testOptions = {
+  name : 'test',
+  width : 1024,
+  height : 1024,
+  colors: {
+    border: 'black',
+    bg: 'red',
+  },
+  makeTest : function() {       // создание своего метода
+    console.log('Test');
+  }
+};
+
+const {border, bg} = testOptions.colors; // деструктризация объекта
+
+testOptions.makeTest();
+
+// delete testOptions.name; // удаляем ключ name
+
+for (let key in testOptions) {
+  if (typeof(testOptions[key]) === 'object') {
+    for (let i in testOptions[key]) {
+      console.log(`Свойство ${i} имеет значение ${testOptions[key][i]}`);
+    }
+  } else {
+    console.log(`Свойство ${key} имеет значение ${testOptions[key]}`);
+  }
+}
