@@ -314,11 +314,9 @@ const objectSP = {
   }
 };
 
-const newObjectSP = {...objectSP}; // копирует по значению только верхний уровень
-                                   // глубина остается по ссылке
-newObjectSP.num.four = 'четыре';
+//const newObjectSP = {...objectSP}; // копирует по значению только верхний уровень
+                                     // глубина остается по ссылке
+// newObjectSP.num.four = 'четыре';
 
-console.log(objectSP);
-console.log(newObjectSP);
-
-// Основы ООП ебать ------------------------------------------------------
+// console.log(objectSP);
+// console.log(newObjectSP);
