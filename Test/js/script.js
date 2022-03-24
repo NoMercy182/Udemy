@@ -199,7 +199,7 @@ for (let value of testArray) {
 
 const testArray2 = [1, 2, 3, 6, 8, 10];
 
-testArray2.forEach(function(item, i, arr) {
+testArray2.forEach(function(item, i, arr) {       // for.Each
   console.log(`${i}: ${item} in array ${arr}`);
 });
 
@@ -267,7 +267,7 @@ function objCopy(mainObj) {
 const newObj2 = objCopy(newObj1);
 newObj2.colors.dark = 'blue';
 
-console.log(newObj1);             // не поменялся первый объект
+console.log(newObj1);             // пачимуто поменялся и первый объект первый объект
 console.log(newObj2);             // копия через цикл
 
 const add = {
