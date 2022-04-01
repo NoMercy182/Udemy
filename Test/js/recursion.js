@@ -15,6 +15,10 @@ const obj = {
   }
 };
 
+
+console.log(Object.values(obj)); // це значения
+
+
 const deepCopy = (object) => {
   let newObject = {};
   if (typeof(object) === 'object') {
