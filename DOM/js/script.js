@@ -56,3 +56,7 @@ div.innerHTML = '<h1>Hello World</h1>'; // вставляем теги
 div.textContent = 'Hello'; // вставляем текст
 
 div.insertAdjacentHTML('beforebegin', '<h2>Hello</h2>');
+
+// --------------------------------- Events -------------------------------------------
+
+

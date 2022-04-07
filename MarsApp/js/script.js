@@ -24,16 +24,14 @@ const movieDB = {
     ]
 };
 
-const garbage = document.querySelectorAll('.promo__adv img');
-for (let v of garbage) {
-    v.remove();
-}
+const marketingImages = document.querySelectorAll('.promo__adv img');
+marketingImages.forEach(img => img.remove());
 
-const genreFilm = document.querySelector('.promo__genre');
-genreFilm.textContent = 'драмма';
+const genre = document.querySelector('.promo__genre');
+genre.innerText = 'драмма';
 
-const backgroundSite = document.querySelector('.promo__bg');
-backgroundSite.style.backgroundImage = "url('img/bg.jpg')";
+const poster = document.querySelector('.promo__bg');
+poster.style.backgroundImage = 'url(img/bg.jpg)';
 
 const movieList = document.querySelector('.promo__interactive-list');
 movieList.innerHTML = '';
@@ -41,8 +39,8 @@ movieDB.movies.sort();
 
 movieDB.movies.forEach((film, i) => {
     movieList.innerHTML += `
-    <li class="promo__interactive-item">${i + 1}) ${film}
-        <div class="delete"></div>
-    </li>
+        <li class="promo__interactive-item">${i + 1}) ${film}
+            <div class="delete"></div>
+        </li>
     `;
 });
